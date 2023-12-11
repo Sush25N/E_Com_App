@@ -68,7 +68,7 @@ const Cart = ({ openModal, setOpen }) => {
                           ></span>
                         </p>
                         <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
-                          Amount: <span className="ml-2">{item.amount}</span>
+                          Quantity: <span className="ml-2">{item.amount}</span>
                         </p>
                         <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
                           Single Item Price:{" "}
