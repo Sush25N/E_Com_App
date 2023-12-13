@@ -33,7 +33,6 @@ import { useSelector } from "react-redux";
 import ProductCard from "./filteredProducts/ProductCard";
 
 const ProductsPage = () => {
-  //   const products = useSelector((state) => state.products.allProducts);
   const products = useSelector((state) => state.products.allProducts);
 
   return (
@@ -44,12 +43,12 @@ const ProductsPage = () => {
             <div key={index}>
               {
                 <ProductCard
-                  id={product.id}
-                  name={product.name}
-                  text={product.text}
-                  img={product.img}
-                  price={product.price}
-                  colors={product.color}
+                  id={products.id}
+                  name={products.name}
+                  text={products.text}
+                  img={products.img}
+                  price={products.price}
+                  colors={products.color}
                 />
               }
             </div>
