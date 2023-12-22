@@ -60,7 +60,7 @@ export const cartSlice = createSlice({
               product.color !== productId.color
           );
           state.totalAmount--;
-          state.totalPrice += productId.price;
+          state.totalPrice -= productId.price;
         } else {
           exist.amount--;
           exist.totalPrice -= productId.price;
@@ -77,18 +77,20 @@ export const cartSlice = createSlice({
 export const { addToCart, removeFromCart } = cartSlice.actions;
 export default cartSlice.reducer;
 
-// cartSlice.js
+// cartSlice.jsx
 
 // import { createSlice } from "@reduxjs/toolkit";
 
-// const cartSlice = createSlice({
+// export const cartSlice = createSlice({
 //   name: "cart",
 //   initialState: {
 //     cart: [],
+//     amount: 0,
+//     totalAmount: 0,
 //     totalPrice: 0,
 //   },
 //   reducers: {
-//     addToCart: (state, action) => {
+//     addToCart(state, action) {
 //       const productId = action.payload;
 //       try {
 //         const exist = state.cart.find(
@@ -100,6 +102,7 @@ export default cartSlice.reducer;
 //         if (exist) {
 //           exist.amount++;
 //           exist.totalPrice += productId.price;
+//           state.totalAmount++;
 //           state.totalPrice += productId.price;
 //         } else {
 //           state.cart.push({
@@ -113,14 +116,16 @@ export default cartSlice.reducer;
 //             text: productId.text,
 //             color: productId.color,
 //           });
+//           state.totalAmount++;
 //           state.totalPrice += productId.price;
 //         }
 //       } catch (err) {
-//         console.error(err);
+//         return err;
 //       }
 //     },
-//     removeFromCart: (state, action) => {
+//     removeFromCart(state, action) {
 //       const productId = action.payload;
+
 //       try {
 //         const exist = state.cart.find(
 //           (product) =>
@@ -135,32 +140,53 @@ export default cartSlice.reducer;
 //               product.size !== productId.size ||
 //               product.color !== productId.color
 //           );
+//           state.totalAmount--;
 //           state.totalPrice -= productId.price;
 //         } else {
 //           exist.amount--;
 //           exist.totalPrice -= productId.price;
+//           state.totalAmount--;
 //           state.totalPrice -= productId.price;
 //         }
 //       } catch (err) {
-//         console.error(err);
+//         return err;
 //       }
 //     },
-//     incrementQuantity: (state, action) => {
-//       const { itemId } = action.payload;
-//       const item = state.cart.find((item) => item.id === itemId);
-//       if (item) {
-//         item.amount += 1;
-//         item.totalPrice = item.amount * item.price;
-//         state.totalPrice += item.price;
+
+//     incrementQuantity(state, action) {
+//       const { id, size, color } = action.payload;
+//       const product = state.cart.find(
+//         (item) => item.id === id && item.size === size && item.color === color
+//       );
+
+//       if (product) {
+//         product.amount += 1;
+//         product.totalPrice += product.price;
+//         state.totalAmount += 1;
+//         state.totalPrice += product.price;
 //       }
 //     },
-//     decrementQuantity: (state, action) => {
-//       const { itemId } = action.payload;
-//       const item = state.cart.find((item) => item.id === itemId);
-//       if (item) {
-//         item.amount -= 1;
-//         item.totalPrice = item.amount * item.price;
-//         state.totalPrice -= item.price;
+
+//     decrementQuantity(state, action) {
+//       const { id, size, color } = action.payload;
+//       const product = state.cart.find(
+//         (item) => item.id === id && item.size === size && item.color === color
+//       );
+
+//       if (product) {
+//         if (product.amount === 1) {
+//           state.cart = state.cart.filter(
+//             (item) =>
+//               !(item.id === id && item.size === size && item.color === color)
+//           );
+//           state.totalAmount -= 1;
+//           state.totalPrice -= product.price;
+//         } else {
+//           product.amount -= 1;
+//           product.totalPrice -= product.price;
+//           state.totalAmount -= 1;
+//           state.totalPrice -= product.price;
+//         }
 //       }
 //     },
 //   },
@@ -172,5 +198,4 @@ export default cartSlice.reducer;
 //   incrementQuantity,
 //   decrementQuantity,
 // } = cartSlice.actions;
-
 // export default cartSlice.reducer;
