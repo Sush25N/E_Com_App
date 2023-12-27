@@ -1,5 +1,3 @@
-// src/components/ProductList/ProductList.jsx
-
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -42,7 +40,6 @@ const ProductList = () => {
         ))}
       </ul>
 
-      {/* Example filter buttons */}
       <button onClick={() => handleFilterGender("male")}>Filter Male</button>
       <button onClick={() => handleSortByPrice()}>Sort by Price</button>
       <button onClick={() => handleFilterByColor("red")}>Filter Red</button>

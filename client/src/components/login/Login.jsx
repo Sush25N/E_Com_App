@@ -11,7 +11,7 @@ import {
 } from "@material-tailwind/react";
 import { login } from "../../features/slices/authSlice";
 import { useDispatch } from "react-redux";
-import "./login.css"; // Import a separate CSS file for custom styles
+import "./login.css";
 
 const Login = () => {
   const initialState = {

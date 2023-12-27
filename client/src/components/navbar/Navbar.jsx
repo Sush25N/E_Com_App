@@ -7,6 +7,14 @@ import { Avatar } from "@material-tailwind/react";
 import { Tooltip } from "@material-tailwind/react";
 import { FaSearch } from "react-icons/fa";
 import "./Navbar.css";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardFooter,
+  Typography,
+} from "@material-tailwind/react";
+import { singleProduct } from "../../features/slices/productSlice";
 
 const Navbar = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
@@ -25,7 +33,7 @@ const Navbar = () => {
   );
 
   // State to track the number of results to display
-  const [displayCount, setDisplayCount] = useState(5);
+  const [displayCount, setDisplayCount] = useState(3);
 
   // Function to load more results
   const loadMoreResults = () => {
@@ -113,14 +121,70 @@ const Navbar = () => {
       </div>
 
       {searchQuery && (
-        <div className="search-results">
+        <div className="search-results grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 justify-center">
           {filteredProductsList.slice(0, displayCount).map((product) => (
-            <div key={product.id} className="result-box">
-              {product.name}
-            </div>
+            <Card
+              key={product.id}
+              className="w-80 sm:w-96 border border-gray-300 rounded-md overflow-hidden transition-transform transform hover:scale-105"
+            >
+              <CardHeader
+                color="blue"
+                className="relative h-72 sm:h-96 overflow-hidden"
+                onClick={() => dispatch(singleProduct(product.id))}
+              >
+                <img
+                  src={product.img}
+                  alt="img-blur-shadow"
+                  className="h-full w-full object-cover"
+                />
+              </CardHeader>
+              <CardBody className="p-4 text-center">
+                <Typography
+                  variant="h5"
+                  className="mb-2 font-bold text-gray-800"
+                >
+                  {product.name}
+                </Typography>
+                <Typography className="text-gray-600">
+                  {product.text || ""}
+                </Typography>
+              </CardBody>
+              <CardFooter
+                divider
+                className="flex items-center justify-between py-3 bg-gray-100"
+              >
+                <Typography
+                  variant="small"
+                  className="font-semibold text-blue-500"
+                >
+                  ${product.price}
+                </Typography>
+                <div className="flex gap-1">
+                  {product.colors?.map((color, index) => (
+                    <i
+                      key={index}
+                      className="fas fa-map-marker-alt fa-sm mt-[3px] rounded-full p-2"
+                      style={{ backgroundColor: color }}
+                    ></i>
+                  ))}
+                </div>
+              </CardFooter>
+            </Card>
           ))}
+
+          {/* {filteredProductsList.length > displayCount && (
+            <p
+              className="see-more mt-4 ml-2 text-center text-gray-600 cursor-pointer hover:underline hover:text-blue-800 hover:text-xl transition-all duration-300"
+              onClick={loadMoreResults}
+            >
+              See more results...
+            </p>
+          )} */}
           {filteredProductsList.length > displayCount && (
-            <p className="see-more mt-4" onClick={loadMoreResults}>
+            <p
+              className="see-more mt-4 ml-2 text-center text-white cursor-pointer hover:underline hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-red-500 hover:text-xl transition-all duration-300"
+              onClick={loadMoreResults}
+            >
               See more results...
             </p>
           )}
