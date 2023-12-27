@@ -94,7 +94,7 @@ const Cart = ({ openModal, setOpen }) => {
                           >
                             +
                           </Button>
-                          Quantity: <span className="ml-2">{item.amount}</span>
+                          <span className="ml-2">{item.amount}</span>
                           {/* Decrement Button */}
                           <Button
                             size="sm"

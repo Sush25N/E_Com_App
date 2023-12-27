@@ -172,14 +172,6 @@ const Navbar = () => {
             </Card>
           ))}
 
-          {/* {filteredProductsList.length > displayCount && (
-            <p
-              className="see-more mt-4 ml-2 text-center text-gray-600 cursor-pointer hover:underline hover:text-blue-800 hover:text-xl transition-all duration-300"
-              onClick={loadMoreResults}
-            >
-              See more results...
-            </p>
-          )} */}
           {filteredProductsList.length > displayCount && (
             <p
               className="see-more mt-4 ml-2 text-center text-white cursor-pointer hover:underline hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-red-500 hover:text-xl transition-all duration-300"
