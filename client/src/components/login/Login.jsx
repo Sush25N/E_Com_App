@@ -37,25 +37,7 @@ const Login = () => {
       password: values.password,
     };
 
-    // Assuming you have a list of registered users in your state or props
-    const registeredUsers = [
-      { name: "Sushrut", password: "Sush@123" },
-      { name: "user2", password: "password2" },
-      // Add more registered users as needed
-    ];
-
-    // Check if the user is registered. If not, toggle to Sign Up view
-    const isUserRegistered = registeredUsers.some(
-      (user) =>
-        user.name.toLowerCase() === userId.name.toLowerCase() &&
-        user.password === userId.password
-    );
-
-    if (!isUserRegistered) {
-      setIsSignUp(true);
-    } else {
-      dispatch(login(userId));
-    }
+    dispatch(login(userId));
   };
 
   const handleSignUp = () => {

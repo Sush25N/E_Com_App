@@ -46,29 +46,31 @@ export const cartSlice = createSlice({
       const productId = action.payload;
 
       try {
-        const exist = state.cart.find(
+        const existIndex = state.cart.findIndex(
           (product) =>
             product.id === productId.id &&
             product.size === productId.size &&
             product.color === productId.color
         );
-        if (exist.amount === 1) {
-          state.cart = state.cart.filter(
-            (product) =>
-              product.id !== productId.id ||
-              product.size !== productId.size ||
-              product.color !== productId.color
-          );
-          state.totalAmount--;
-          state.totalPrice -= productId.price;
-        } else {
-          exist.amount--;
-          exist.totalPrice -= productId.price;
+
+        if (existIndex !== -1) {
+          const exist = state.cart[existIndex];
+
+          if (exist.amount === 1) {
+            // Remove the entire entity from the cart
+            state.cart.splice(existIndex, 1);
+          } else {
+            // Decrease the amount and update totalPrice
+            exist.amount--;
+            exist.totalPrice -= productId.price;
+          }
+
+          // Update totalAmount and totalPrice
           state.totalAmount--;
           state.totalPrice -= productId.price;
         }
       } catch (err) {
-        return err;
+        console.error("Error removing from cart:", err);
       }
     },
 

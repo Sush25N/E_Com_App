@@ -46,6 +46,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
+    "postcss-nesting": "^12.0.2",
+    "tailwindcss/nesting": "postcss-nesting",
     "tailwindcss": "^3.3.5"
   }
 }

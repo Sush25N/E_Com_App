@@ -6,7 +6,6 @@
 //     user: JSON.parse(sessionStorage.getItem("authUser")) || {
 //       name: "",
 //       password: "",
-//       image: "",
 //       authUser: false,
 //     },
 //   },
@@ -28,11 +27,39 @@
 //         sessionStorage.setItem("authUser", saveState);
 //       }
 //     },
+//     signup(state, action) {
+//       const newUser = action.payload;
+//       const userValidation = /^[A-Za-z]{4,10}$/i.test(newUser.name);
+//       const passwordValidation =
+//         /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,10}$/i.test(
+//           newUser.password
+//         );
+
+//       // Assuming you have a confirmPassword field in your form
+//       const confirmPasswordValidation =
+//         newUser.password === newUser.confirmPassword;
+
+//       // Assuming you have a phoneNumber field in your form
+//       const phoneNumberValidation = /^[0-9]{10}$/i.test(newUser.phoneNumber);
+
+//       if (
+//         !userValidation ||
+//         !passwordValidation ||
+//         !confirmPasswordValidation ||
+//         !phoneNumberValidation
+//       ) {
+//         state.user.authUser = false;
+//       } else {
+//         state.user = newUser;
+//         state.user.authUser = true;
+//         const saveState = JSON.stringify(newUser);
+//         sessionStorage.setItem("authUser", saveState);
+//       }
+//     },
 //     logout(state) {
 //       state.user = {
 //         name: "",
 //         password: "",
-//         image: "",
 //         authUser: false,
 //       };
 //       sessionStorage.clear();
@@ -40,8 +67,10 @@
 //   },
 // });
 
-// export const { login, logout } = authSlice.actions;
+// export const { login, signup, logout } = authSlice.actions;
 // export default authSlice.reducer;
+
+// authSlice.js
 
 import { createSlice } from "@reduxjs/toolkit";
 
