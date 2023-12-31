@@ -37,7 +37,7 @@ const Navbar = () => {
 
   // Function to load more results
   const loadMoreResults = () => {
-    setDisplayCount(displayCount + 5);
+    setDisplayCount(displayCount + 3);
   };
 
   const handleOpen = () => {
@@ -120,12 +120,75 @@ const Navbar = () => {
         </div>
       </div>
 
-      {searchQuery && (
+      {/* {searchQuery && (
         <div className="search-results grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 justify-center">
           {filteredProductsList.slice(0, displayCount).map((product) => (
             <Card
               key={product.id}
               className="w-80 sm:w-96 border border-gray-300 rounded-md overflow-hidden transition-transform transform hover:scale-105"
+            >
+              <CardHeader
+                color="blue"
+                className="relative h-72 sm:h-96 overflow-hidden"
+                onClick={() => dispatch(singleProduct(product.id))}
+              >
+                <img
+                  src={product.img}
+                  alt="img-blur-shadow"
+                  className="h-full w-full object-cover"
+                />
+              </CardHeader>
+              <CardBody className="p-4 text-center">
+                <Typography
+                  variant="h5"
+                  className="mb-2 font-bold text-gray-800"
+                >
+                  {product.name}
+                </Typography>
+                <Typography className="text-gray-600">
+                  {product.text || ""}
+                </Typography>
+              </CardBody>
+              <CardFooter
+                divider
+                className="flex items-center justify-between py-3 bg-gray-100"
+              >
+                <Typography
+                  variant="small"
+                  className="font-semibold text-blue-500"
+                >
+                  ${product.price}
+                </Typography>
+                <div className="flex gap-1">
+                  {product.colors?.map((color, index) => (
+                    <i
+                      key={index}
+                      className="fas fa-map-marker-alt fa-sm mt-[3px] rounded-full p-2"
+                      style={{ backgroundColor: color }}
+                    ></i>
+                  ))}
+                </div>
+              </CardFooter>
+            </Card>
+          ))}
+
+          {filteredProductsList.length > displayCount && (
+            <p
+              className="see-more mt-4 ml-2 text-center text-white cursor-pointer hover:underline hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-red-500 hover:text-xl transition-all duration-300"
+              onClick={loadMoreResults}
+            >
+              See more results...
+            </p>
+          )}
+        </div>
+      )} */}
+
+      {searchQuery && (
+        <div className="search-results grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 justify-center">
+          {filteredProductsList.slice(0, displayCount).map((product) => (
+            <Card
+              key={product.id}
+              className="w-80 sm:w-96 border border-gray-300 rounded-md overflow-hidden transition-transform transform hover:scale-105  p-2"
             >
               <CardHeader
                 color="blue"
