@@ -109,11 +109,11 @@ export const authSlice = createSlice({
           newUser.password
         );
 
-      // Assuming you have a confirmPassword field in your form
+      // Assuming we have a confirmPassword field in our form
       const confirmPasswordValidation =
         newUser.password === newUser.confirmPassword;
 
-      // Assuming you have a phoneNumber field in your form
+      // Assuming we have a phoneNumber field in our form
       const phoneNumberValidation = /^[0-9]{10}$/i.test(newUser.phoneNumber);
 
       if (
