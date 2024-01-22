@@ -33,11 +33,11 @@ const PaymentConfirmationModal = ({ product }) => {
           </p>
           <span className="ml-2 font-bold">Product Count: 1</span>
           <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-            {product.price}₹
+            ₹{product.price}
           </p>
         </div>
         <div className="flex justify-between p-6 pt-4">
-          <h1 className="font-bold">Amount Paid: {product.totalPrice}₹</h1>
+          <h1 className="font-bold">Amount Paid: ₹{product.totalPrice}</h1>
           <p className="font-bold">Total Count: {product.amount}</p>
         </div>
         <div>

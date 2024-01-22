@@ -107,11 +107,11 @@ const Cart = ({ openModal, setOpen }) => {
                       </p>
                       <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
                         Single Item Price:{" "}
-                        <span className="ml-2">{item.price}₹</span>
+                        <span className="ml-2">₹{item.price}</span>
                       </p>
                       <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
                         Total Item Price:{" "}
-                        <span className="ml-2">{item.totalPrice}₹</span>
+                        <span className="ml-2">₹{item.totalPrice}</span>
                       </p>
                       <div className="pt-4">
                         <Tooltip
@@ -145,7 +145,7 @@ const Cart = ({ openModal, setOpen }) => {
             <DialogFooter className="flex justify-start items-center">
               <p className="text-black text-base font-inter tracking-normal leading-none pt-2">
                 Total Price of All Products:{" "}
-                <span className="ml-2">{totalPrice}₹</span>
+                <span className="ml-2">₹{totalPrice}</span>
               </p>
             </DialogFooter>
           </Dialog>
