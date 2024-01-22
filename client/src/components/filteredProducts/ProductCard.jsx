@@ -31,7 +31,7 @@ const ProductCard = ({ id, name, text, img, price, colors }) => {
           <Typography>{text || ""}</Typography>
         </CardBody>
         <CardFooter divider className="flex items-center justify-between py-3">
-          <Typography variant="small">{price}$</Typography>
+          <Typography variant="small">{price}₹</Typography>
           <Typography variant="small" color="gray" className="flex gap-1">
             {colors?.map((color, index) => (
               <i
