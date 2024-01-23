@@ -94,6 +94,9 @@ const ProductSectionItem = ({
               ></span>
             </Typography>
           </div>
+          <Typography variant="h5" color="green" className="mt-4">
+            Price: ₹{price.toFixed(2)}
+          </Typography>
         </CardBody>
         <CardFooter className="flex justify-center gap-7 pt-2">
           <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">

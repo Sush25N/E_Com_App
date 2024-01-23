@@ -544,7 +544,7 @@ const Login = () => {
                   No registered user found.
                 </span>
                 <br />
-                Redirecting you to the sign-up page...
+                Redirecting you to the sign-up page...!
               </Typography>
             </div>
           )}

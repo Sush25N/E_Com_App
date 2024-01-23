@@ -89,20 +89,20 @@ const Cart = ({ openModal, setOpen }) => {
                       <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
                         <Button
                           size="sm"
-                          color="green"
-                          ripple={true}
-                          onClick={() => handleIncrement(item)}
-                        >
-                          +
-                        </Button>
-                        <span className="ml-2">{item.amount}</span>
-                        <Button
-                          size="sm"
                           color="red"
                           ripple={true}
                           onClick={() => handleDecrement(item)}
                         >
                           -
+                        </Button>
+                        <span className="mx-2">{item.amount}</span>
+                        <Button
+                          size="sm"
+                          color="green"
+                          ripple={true}
+                          onClick={() => handleIncrement(item)}
+                        >
+                          +
                         </Button>
                       </p>
                       <p className="text-black text-sm font-inter tracking-normal leading-none pt-2">
@@ -124,6 +124,7 @@ const Cart = ({ openModal, setOpen }) => {
                             color="red"
                             ripple={true}
                             variant="filled"
+                            className="mr-2"
                           >
                             Remove
                           </Button>
