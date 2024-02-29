@@ -11,14 +11,14 @@ const PaymentConfirmationModal = ({ product }) => {
     // Set a timeout to stop the confetti after a certain duration
     const timeoutId = setTimeout(() => {
       setConfetti(false);
-    }, 15000); // Stop confetti after 5 seconds (adjust as needed)
+    }, 10000); // Stop confetti after 5 seconds (adjust as needed)
 
     // Cleanup the timeout to prevent memory leaks
     return () => clearTimeout(timeoutId);
   }, []);
 
   return (
-    <div className="flex flex-col items-center text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96 p-6 mx-40">
+    <div className="flex flex-col items-center text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96 p-6 mx-20">
       <div className="relative overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96 w-full mb-4">
         <img
           src={product.img}
@@ -45,7 +45,7 @@ const PaymentConfirmationModal = ({ product }) => {
           <div style={{ fontWeight: "bold" }}>
             Payment Done Successfully 🎉🎉✅✅🎊🎊
           </div>
-          {confetti && <Confetti />}
+          {confetti && <Confetti width={680} />}
         </div>
       </div>
     </div>
