@@ -11,7 +11,7 @@ const PaymentConfirmationModal = ({ product }) => {
     // Set a timeout to stop the confetti after a certain duration
     const timeoutId = setTimeout(() => {
       setConfetti(false);
-    }, 10000); // Stop confetti after 5 seconds (adjust as needed)
+    }, 5000); // Stop confetti after 5 seconds (adjust as needed)
 
     // Cleanup the timeout to prevent memory leaks
     return () => clearTimeout(timeoutId);

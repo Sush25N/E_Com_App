@@ -4,6 +4,7 @@ import Slider from "../slider/Slider";
 import NavigateButtons from "../navigateButtons/NavigateButtons";
 import ProductSection from "../productSection/ProductSection";
 import Footer from "../footer/Footer";
+import ChatBotModal from "../chatbot/ChatBotModal";
 
 const Main = () => {
   return (
@@ -11,6 +12,7 @@ const Main = () => {
       <Navbar />
       <Slider />
       <NavigateButtons />
+      <ChatBotModal />
       <ProductSection />
       <Footer />
     </>

@@ -11,6 +11,7 @@
     "axios": "^1.6.7",
     "fake-indexeddb": "^5.0.2",
     "idb": "^8.0.0",
+    "lucide-react": "^0.343.0",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
     "react-content-loader": "^6.2.1",
