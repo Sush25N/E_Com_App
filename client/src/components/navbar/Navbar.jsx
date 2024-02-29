@@ -237,11 +237,11 @@ const Navbar = () => {
   );
 
   // State to track the number of results to display
-  const [displayCount, setDisplayCount] = useState(3);
+  const [displayCount, setDisplayCount] = useState(2);
 
   // Function to load more results
   const loadMoreResults = () => {
-    setDisplayCount(displayCount + 3);
+    setDisplayCount(displayCount + 2);
   };
 
   const handleOpen = () => {
@@ -341,7 +341,7 @@ const Navbar = () => {
       </div>
 
       {searchQuery && (
-        <div className="search-results grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 justify-center">
+        <div className="search-results grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 justify-center">
           {filteredProductsList.slice(0, displayCount).map((product) => (
             <Card
               key={product.id}

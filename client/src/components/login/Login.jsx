@@ -387,6 +387,7 @@ import {
 import "./login.css";
 import { useDispatch } from "react-redux";
 import { login, signup } from "../../features/slices/authSlice";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const initialState = {
@@ -395,6 +396,17 @@ const Login = () => {
     confirmPassword: "",
     phoneNumber: "",
     image: "",
+  };
+
+  const [isShow, setIsShow] = useState(false);
+  const [isShowConfirm, setIsShowConfirm] = useState(false);
+
+  const togglePass = () => {
+    setIsShow(!isShow);
+  };
+
+  const toggleConfirmPass = () => {
+    setIsShowConfirm(!isShowConfirm);
   };
 
   const [values, setValues] = useState(initialState);
@@ -517,6 +529,7 @@ const Login = () => {
         </CardHeader>
         <CardBody className="flex flex-col gap-4 p-6 relative z-20">
           <Input
+            required
             label="Name"
             size="lg"
             type="text"
@@ -524,14 +537,41 @@ const Login = () => {
             value={values.name}
             onChange={onChange}
           />
-          <Input
+          {/* <Input
             label="Password"
             size="lg"
-            type="password"
+            type={isShow ? "text" : "password"}
             name="password"
             value={values.password}
             onChange={onChange}
           />
+          <div onClick={togglePass}>{isShow ? <FaEye /> : <FaEyeSlash />}</div> */}
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ position: "relative", width: "100%" }}>
+              <Input
+                required
+                label="Password"
+                size="lg"
+                type={isShow ? "text" : "password"}
+                name="password"
+                value={values.password}
+                onChange={onChange}
+              />
+              <div
+                onClick={togglePass}
+                style={{
+                  position: "absolute",
+                  right: "10px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  cursor: "pointer",
+                }}
+              >
+                {isShow ? <FaEye /> : <FaEyeSlash />}
+              </div>
+            </div>
+          </div>
+
           {showWrongPasswordMessage && (
             <Typography variant="body2" color="red" className="mt-1">
               Incorrect username or password. Please try again.
@@ -550,15 +590,33 @@ const Login = () => {
           )}
           {isSignUp && (
             <>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={{ position: "relative", width: "100%" }}>
+                  <Input
+                    required
+                    label="Confirm Password"
+                    size="lg"
+                    type={isShowConfirm ? "text" : "password"}
+                    name="confirmPassword"
+                    value={values.confirmPassword}
+                    onChange={onChange}
+                  />
+                  <div
+                    onClick={toggleConfirmPass}
+                    style={{
+                      position: "absolute",
+                      right: "10px",
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {isShowConfirm ? <FaEye /> : <FaEyeSlash />}
+                  </div>
+                </div>
+              </div>
               <Input
-                label="Confirm Password"
-                size="lg"
-                type="password"
-                name="confirmPassword"
-                value={values.confirmPassword}
-                onChange={onChange}
-              />
-              <Input
+                required
                 label="Phone Number"
                 size="lg"
                 type="text"
