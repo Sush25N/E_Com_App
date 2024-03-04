@@ -287,7 +287,7 @@ const Navbar = () => {
               placeholder="Search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="border border-gray-300 rounded-md pl-10 pr-4 py-1 focus:outline-none focus:ring focus:border-blue-300 transition-all duration-300 w-36 mr-4"
+              className="border border-gray-800 rounded-md pl-10 pr-4 py-1 focus:outline-none focus:ring focus:border-blue-300 transition-all duration-300 w-36 mr-4"
             />
           </div>
           <div
