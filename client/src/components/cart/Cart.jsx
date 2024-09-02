@@ -157,6 +157,9 @@ const Cart = ({ openModal, setOpen }) => {
                 <PaymentConfirmationModal product={selectedProduct} />
               </DialogBody>
               <DialogFooter>
+                <h1 style={{ marginRight: "10px" }}>
+                  Thank You for Shopping..!
+                </h1>
                 <Button
                   onClick={() => setSelectedProduct(null)}
                   size="sm"

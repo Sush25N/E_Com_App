@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 //ProductSectionItem.jsx
 
+=======
+>>>>>>> 8f63886052fddf0a9c39d3730043e63f8b3159c3
 // import React, { useState } from "react";
 // import {
 //   Card,
@@ -228,17 +231,28 @@ const ProductSectionItem = ({
         width={400}
         height={400}
         viewBox="0 0 400 400"
+<<<<<<< HEAD
         backgroundColor="#f3f3f3"
+=======
+        backgroundColor="#dbd9d9"
+>>>>>>> 8f63886052fddf0a9c39d3730043e63f8b3159c3
         foregroundColor="#ecebeb"
       >
         {/* Placeholder for the product image */}
         <rect x="0" y="0" rx="12" ry="12" width="100%" height="60%" />
 
         {/* Placeholder for the product title */}
+<<<<<<< HEAD
         <rect x="20" y="70%" rx="3" ry="3" width="80%" height="12" />
 
         {/* Placeholder for the product description */}
         <rect x="20" y="75%" rx="3" ry="3" width="80%" height="12" />
+=======
+        <rect x="40" y="65%" rx="3" ry="3" width="70%" height="12" />
+
+        {/* Placeholder for the product description */}
+        <rect x="30" y="70%" rx="3" ry="3" width="80%" height="20" />
+>>>>>>> 8f63886052fddf0a9c39d3730043e63f8b3159c3
 
         {/* Placeholder for the product size */}
         <rect x="20" y="80%" rx="3" ry="3" width="30%" height="8" />
@@ -247,10 +261,17 @@ const ProductSectionItem = ({
         <rect x="60%" y="80%" rx="3" ry="3" width="30%" height="8" />
 
         {/* Placeholder for the product price */}
+<<<<<<< HEAD
         <rect x="20" y="85%" rx="3" ry="3" width="30%" height="8" />
 
         {/* Placeholder for the add to cart button */}
         <rect x="60%" y="85%" rx="3" ry="3" width="30%" height="8" />
+=======
+        <rect x="120" y="85%" rx="3" ry="3" width="30%" height="8" />
+
+        {/* Placeholder for the add to cart button */}
+        <rect x="20%" y="92%" rx="3" ry="3" width="50%" height="8" />
+>>>>>>> 8f63886052fddf0a9c39d3730043e63f8b3159c3
       </ContentLoader>
     );
   }

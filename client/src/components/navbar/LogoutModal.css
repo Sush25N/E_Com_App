@@ -1,0 +1,28 @@
+/* LogoutModal.css */
+
+.modal {
+  @apply fixed top-0 left-0 w-full h-full flex items-center justify-center z-50;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  @apply bg-white p-6 rounded-md shadow-md z-50;
+}
+
+.modal-content p {
+  @apply mb-4 text-lg font-semibold;
+}
+
+.modal-content button {
+  @apply px-4 py-2 rounded-md focus:outline-none;
+}
+
+/* Customize button styles for Yes */
+.modal-content button:first-child {
+  @apply bg-blue-500 text-white hover:bg-blue-600 focus:border-blue-700 focus:ring focus:ring-blue-200;
+}
+
+/* Customize button styles for No */
+.modal-content button:last-child {
+  @apply bg-gray-300 text-gray-700 hover:bg-gray-400 focus:border-gray-500 focus:ring focus:ring-gray-200;
+}

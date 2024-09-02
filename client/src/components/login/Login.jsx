@@ -529,6 +529,7 @@ const Login = () => {
         </CardHeader>
         <CardBody className="flex flex-col gap-4 p-6 relative z-20">
           <Input
+            required
             label="Name"
             size="lg"
             type="text"
@@ -548,6 +549,10 @@ const Login = () => {
           <div style={{ display: "flex", alignItems: "center" }}>
             <div style={{ position: "relative", width: "100%" }}>
               <Input
+<<<<<<< HEAD
+=======
+                required
+>>>>>>> 8f63886052fddf0a9c39d3730043e63f8b3159c3
                 label="Password"
                 size="lg"
                 type={isShow ? "text" : "password"}
@@ -591,6 +596,10 @@ const Login = () => {
               <div style={{ display: "flex", alignItems: "center" }}>
                 <div style={{ position: "relative", width: "100%" }}>
                   <Input
+<<<<<<< HEAD
+=======
+                    required
+>>>>>>> 8f63886052fddf0a9c39d3730043e63f8b3159c3
                     label="Confirm Password"
                     size="lg"
                     type={isShowConfirm ? "text" : "password"}
@@ -613,6 +622,10 @@ const Login = () => {
                 </div>
               </div>
               <Input
+<<<<<<< HEAD
+=======
+                required
+>>>>>>> 8f63886052fddf0a9c39d3730043e63f8b3159c3
                 label="Phone Number"
                 size="lg"
                 type="text"
